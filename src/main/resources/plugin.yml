@@ -1,0 +1,4 @@
+name: MCDLMI
+version: '2.0.0'
+main: com.connexal.mcdlmi.MCDLMI
+api-version: '26.2'
