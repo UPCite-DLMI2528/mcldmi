@@ -32,7 +32,10 @@ public class ColouredChatMessages implements DLMIComponent, Listener {
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
-    public void onPlayerCommandPreprocess(PlayerDeathEvent event) {
-        event.deathMessage(event.deathMessage().color(NamedTextColor.DARK_AQUA));
+    public void onPlayerDeath(PlayerDeathEvent event) {
+        Component message = event.deathMessage();
+        if (message != null) {
+            event.deathMessage(message.color(NamedTextColor.DARK_AQUA));
+        }
     }
 }
