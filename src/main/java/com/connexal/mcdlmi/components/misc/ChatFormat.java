@@ -40,7 +40,7 @@ public class ChatFormat implements DLMIComponent, Listener {
      * 2. It strips away any signatures from the message, making all chat messages appear as if they were sent by the
      *    server. This is done to remove chat reporting features.
      */
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOW)
     public void onPlayerChatEvent(AsyncChatEvent event) {
         event.setCancelled(true);
 
@@ -57,7 +57,7 @@ public class ChatFormat implements DLMIComponent, Listener {
     /**
      * This function intercepts the /msg command and formats it better than the default implementation.
      */
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOW)
     public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
         if (event.getMessage().toLowerCase(Locale.ROOT).startsWith("/msg")) {
             event.setCancelled(true);
